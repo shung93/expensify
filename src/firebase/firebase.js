@@ -14,8 +14,9 @@ const config = {
 
 const app = firebase.initializeApp(config);
 const database = firebase.database();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider(); // allows us to setup auth provider with google
 
-export {firebase, database as default};
+export {firebase, googleAuthProvider, database as default};
 
 // child_removed > subscriber every time a child is removed 
 // database.ref('expenses').on('child_removed', (snapshot) => {
